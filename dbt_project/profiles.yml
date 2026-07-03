@@ -1,0 +1,16 @@
+# Connection profile for the HIS replica database (demo_db).
+# Credentials hardcoded here for simplicity — this file is NOT committed to git.
+# TODO: Update host/user/password when Database Administrator provides the replica credentials.
+RAG_ai_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_PG_HOST') }}"
+      port: "{{ env_var('DBT_PG_PORT') | int }}"
+      user: "{{ env_var('DBT_PG_USER') }}"
+      password: "{{ env_var('DBT_PG_PASSWORD') }}"
+      dbname: "{{ env_var('DBT_PG_DBNAME') }}"
+      schema: dbt_analytics
+      threads: 4
+      keepalives_idle: 0

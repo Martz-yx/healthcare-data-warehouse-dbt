@@ -1,0 +1,29 @@
+version: 2
+
+exposures:
+  - name: text_to_sql_ai_engine
+    type: ml
+    url: https://github.com/Martz-yx/healthcare-data-warehouse-dbt
+    description: >
+      The LLM-powered Text-to-SQL Assistant that queries the Data Warehouse 
+      to answer ad-hoc questions for medical directors.
+    depends_on:
+      - ref('mart_consultas')
+      - ref('mart_ocupacion_camas')
+      - ref('mart_diagnosticos_ambulatorios')
+    owner:
+      name: Data Engineering Team
+      email: data@hospital.local
+
+  - name: executive_dashboard
+    type: dashboard
+    url: https://tableau.hospital.local/executive
+    description: >
+      Tableau dashboard tracking daily active hospitalizations and 
+      top-level outpatient volume.
+    depends_on:
+      - ref('mart_internados_activos')
+      - ref('mart_establecimientos_resumen')
+    owner:
+      name: BI Team
+      email: bi@hospital.local

@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_paciente
+    description: "Pacientes con columnas decodificadas (sexo, estado civil, área). Nombre completo pre-construido."
+  - name: stg_usuario
+    description: "Usuarios del sistema (médicos, enfermeros). Deduplicado por multi-hospital."
+  - name: stg_establecimiento
+    description: "Establecimientos de salud con área decodificada."
+  - name: stg_servicio
+    description: "Servicios/departamentos médicos con flag booleano de activo."
+  - name: stg_cie10
+    description: "Diagnósticos CIE-10 con jerarquía completa pre-unida (capítulo > grupo > subgrupo > diagnóstico)."
+  - name: stg_medicamento
+    description: "Catálogo de medicamentos con nombres limpios."
+  - name: stg_cama
+    description: "Camas con ubicación completa (edificio > piso > sala) y estado actual. Elimina 4 JOINs."
