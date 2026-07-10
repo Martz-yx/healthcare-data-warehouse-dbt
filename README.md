@@ -4,8 +4,8 @@
 flowchart LR
     %% Conceptual Layer Flow
     db[("Raw HIS Database")] --> stg["Staging Layer<br>(Data Cleansing)"]
-    stg --> int["Intermediate Layer<br>(Business Logic)"]
-    int --> mart["Data Marts<br>(Domain Aggregation)"]
+    stg --> int["Intermediate Layer<br>(Lambda Architecture)"]
+    int --> mart["Data Marts<br>(Polished Analytics Models)"]
     stg --> mart
 
     %% Consumers
